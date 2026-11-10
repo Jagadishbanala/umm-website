@@ -364,8 +364,12 @@ a:hover .fly svg + svg, button:hover .fly svg + svg, .post-card:hover .fly svg +
   background: var(--umm-ink); color: #fff;
   isolation: isolate;
 }
+/* Whole card is the link: the title link's ::after stretches over .feature (text, art and notch).
+   .feature__body must NOT be positioned, or the overlay shrinks to the text column only. */
 .feature__link::after { content: ""; position: absolute; inset: 0; z-index: 3; }
-.feature__body { position: relative; z-index: 1; display: flex; flex-direction: column; padding: clamp(28px, 4vw, 60px); }
+.feature:has(.feature__link:focus-visible) { outline: 2px solid var(--umm-ink); outline-offset: 4px; }
+.feature__link:focus-visible { outline: none; }
+.feature__body { display: flex; flex-direction: column; padding: clamp(28px, 4vw, 60px); }
 .feature__body .eyebrow { color: #fff; }
 .feature__kicker { margin-top: auto; padding-top: 40px; font-size: .875rem; color: var(--umm-ink-paper-soft); }
 .feature__kicker b { font-weight: 500; color: #fff; }
@@ -373,6 +377,7 @@ a:hover .fly svg + svg, button:hover .fly svg + svg, .post-card:hover .fly svg +
 .feature__excerpt { margin-top: 18px; max-width: 42ch; font-size: var(--umm-text-body-l); line-height: 1.6; color: var(--umm-ink-paper-soft); }
 .feature__foot { display: flex; align-items: center; gap: 22px; margin-top: 32px; padding-right: 80px; }
 .feature__foot .text-link { color: #fff; font-size: var(--umm-text-body); }
+.feature:hover .text-link span:first-child { background-size: 100% 1px; }
 .feature__foot .mono { color: var(--umm-ink-paper-soft); }
 .feature__art {
   position: relative; display: grid; place-items: center; overflow: hidden;
