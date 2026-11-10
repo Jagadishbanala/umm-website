@@ -1,39 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
-  <title>A receipt that shows the delivery cost up front, with a price tag and a delivery van</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" fill="none">
+  <title>A receipt that shows the delivery cost up front, next to a delivery van</title>
   <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
-  <!-- receipt -->
-  <path class="k" transform="translate(5 5)" d="M46 22H184Q190 22 190 28V186L177.5 176L165 186L152.5 176L140 186L127.5 176L115 186L102.5 176L90 186L77.5 176L65 186L52.5 176L40 186V28Q40 22 46 22Z"/>
-  <path class="o" d="M46 22H184Q190 22 190 28V186L177.5 176L165 186L152.5 176L140 186L127.5 176L115 186L102.5 176L90 186L77.5 176L65 186L52.5 176L40 186V28Q40 22 46 22Z" fill="#fff"/>
-  <path class="o" style="stroke-width:5" d="M58 44H112"/>
-  <path class="o" d="M58 70H118M150 70H158"/>
-  <circle class="o" style="stroke-width:2.2" cx="172" cy="70" r="8" fill="#c2ffcd"/>
-  <path class="o" style="stroke-width:2.2" d="M168 70l3 3l6-6"/>
-  <rect class="o" style="stroke-width:2.5" x="50" y="88" width="130" height="28" rx="8" fill="#ffc4f2"/>
-  <path class="o" d="M60 102H104"/>
-  <path class="o" style="stroke-width:4.5" d="M140 102H168"/>
-  <path class="o" d="M58 132H110M150 132H168"/>
-  <path class="o" style="stroke-width:2;stroke-dasharray:4 6" d="M54 148H176"/>
-  <path class="o" style="stroke-width:5" d="M58 162H96M136 162H170"/>
-  <!-- arrow to price tag -->
-  <path class="o" style="stroke-width:2.5;stroke-dasharray:5 6" d="M184 100C202 100 210 82 228 82"/>
-  <path class="o" style="stroke-width:2.5" d="M222 76L230 82L222 88"/>
-  <!-- price tag -->
-  <path class="k" transform="translate(4 4)" d="M234 66H268L282 80L268 94H234Z"/>
-  <path class="o" d="M234 66H268L282 80L268 94H234Z" fill="#ffe58f"/>
-  <circle class="k" cx="269" cy="80" r="3"/>
-  <path class="o" d="M244 80H256"/>
-  <!-- van -->
-  <path class="o" style="stroke-width:2.5" d="M198 122H208M192 136H206M198 150H208"/>
-  <rect class="k" x="217" y="113" width="78" height="56" rx="6"/>
-  <rect class="o" x="212" y="108" width="78" height="56" rx="6" fill="#d1e7ff"/>
-  <path class="k" d="M295 129H321L341 151V169H295Z"/>
-  <path class="o" d="M290 124H316L336 146V164H290Z" fill="#fff"/>
-  <path class="o" style="stroke-width:2.5" d="M297 131H313L325 144H297Z" fill="#d1e7ff"/>
-  <rect class="o" style="stroke-width:2.5" x="236" y="122" width="30" height="26" rx="3" fill="#ffe58f"/>
-  <path class="o" style="stroke-width:2.5" d="M251 122V133"/>
-  <circle class="k" cx="236" cy="168" r="12"/>
-  <circle cx="236" cy="168" r="4" fill="#fff"/>
-  <circle class="k" cx="314" cy="168" r="12"/>
-  <circle cx="314" cy="168" r="4" fill="#fff"/>
-  <path class="o" d="M200 186H348"/>
+  <path class="k" transform="translate(4 4)" d="M46 14H144Q150 14 150 20V140L139 132L128 140L117 132L106 140L95 132L84 140L73 132L62 140L51 132L40 140V20Q40 14 46 14Z"/>
+  <path class="o" d="M46 14H144Q150 14 150 20V140L139 132L128 140L117 132L106 140L95 132L84 140L73 132L62 140L51 132L40 140V20Q40 14 46 14Z" fill="#fff"/>
+  <path class="o" d="M54 36H100M54 54H92M122 54H136"/>
+  <rect class="o" style="stroke-width:2.5" x="48" y="66" width="94" height="22" rx="6" fill="#ffc4f2"/>
+  <path class="o" d="M58 77H88M118 77H132M54 102H92M122 102H136"/>
+  <path class="o" style="stroke-width:4" d="M54 120H80M116 120H136"/>
+  <rect class="k" x="176" y="74" width="64" height="46" rx="5"/>
+  <rect class="o" x="172" y="70" width="64" height="46" rx="5" fill="#d1e7ff"/>
+  <path class="k" d="M240 88H260L276 104V120H240Z"/>
+  <path class="o" d="M236 84H256L272 100V116H236Z" fill="#fff"/>
+  <path class="o" style="stroke-width:2.5" d="M242 89H254L264 99H242Z" fill="#d1e7ff"/>
+  <circle class="k" cx="190" cy="118" r="9"/><circle cx="190" cy="118" r="3" fill="#fff"/>
+  <circle class="k" cx="256" cy="118" r="9"/><circle cx="256" cy="118" r="3" fill="#fff"/>
+  <path class="o" d="M164 134H284"/>
 </svg>

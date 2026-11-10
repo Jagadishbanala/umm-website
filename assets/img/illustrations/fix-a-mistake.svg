@@ -1,45 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" fill="none">
   <title>A form where one field is being corrected, with an undo button and a progress-saved message</title>
   <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
-  <!-- form window -->
-  <rect class="k" x="35" y="19" width="190" height="194" rx="14"/>
-  <rect class="o" x="30" y="14" width="190" height="194" rx="14" fill="#fff"/>
-  <circle class="k" cx="45" cy="28" r="3.5"/><circle class="k" cx="57" cy="28" r="3.5"/><circle class="k" cx="69" cy="28" r="3.5"/>
-  <path class="o" d="M30 42H220"/>
-  <!-- field 1: done -->
-  <rect class="o" style="stroke-width:2.5" x="46" y="56" width="158" height="28" rx="8" fill="#fff"/>
-  <path class="o" style="stroke-width:4" d="M58 70H128"/>
-  <circle class="o" style="stroke-width:2.2" cx="190" cy="70" r="8" fill="#c2ffcd"/>
-  <path class="o" style="stroke-width:2.2" d="M186 70l3 3l6-6"/>
-  <!-- field 2: being fixed -->
-  <rect class="o" style="stroke-width:2.5" x="46" y="94" width="158" height="28" rx="8" fill="#f0ff70"/>
-  <path class="o" style="stroke-width:4" d="M58 108H98"/>
-  <path class="o" style="stroke-width:2.5" d="M105 100V116"/>
-  <!-- field 3: kept -->
-  <rect class="o" style="stroke-width:2.5" x="46" y="132" width="158" height="28" rx="8" fill="#fff"/>
-  <path class="o" style="stroke-width:4" d="M58 146H118"/>
-  <circle class="o" style="stroke-width:2.2" cx="190" cy="146" r="8" fill="#c2ffcd"/>
-  <path class="o" style="stroke-width:2.2" d="M186 146l3 3l6-6"/>
-  <!-- continue button -->
-  <rect class="k" x="46" y="174" width="76" height="22" rx="11"/>
-  <path stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M96 185H110M105 180l5 5l-5 5"/>
-  <!-- pencil -->
-  <g transform="translate(200 96) rotate(40)">
-    <rect class="o" style="stroke-width:2.5" x="-6" y="-30" width="12" height="30" fill="#ffe58f"/>
-    <rect class="o" style="stroke-width:2.5" x="-6" y="-38" width="12" height="8" rx="2" fill="#dccfff"/>
-    <path class="o" style="stroke-width:2.5" d="M-6 0L0 12L6 0Z" fill="#fff"/>
-  </g>
-  <!-- undo -->
-  <path class="o" style="stroke-width:2.5;stroke-dasharray:5 6" d="M250 96C238 104 232 106 222 108"/>
-  <circle class="k" cx="287" cy="73" r="32"/>
-  <circle class="o" cx="282" cy="68" r="32" fill="#d1e7ff"/>
-  <path class="o" style="stroke-width:4" d="M294 84C300 70 292 58 278 58H266"/>
-  <path class="o" style="stroke-width:4" d="M274 50L266 58L274 66"/>
-  <!-- saved toast -->
-  <rect class="k" x="233" y="147" width="118" height="40" rx="20"/>
-  <rect class="o" x="228" y="142" width="118" height="40" rx="20" fill="#fff"/>
-  <circle class="o" style="stroke-width:2.2" cx="250" cy="162" r="10" fill="#c2ffcd"/>
-  <path class="o" style="stroke-width:2.5" d="M245 162l3.5 3.5l7-7"/>
-  <path class="o" style="stroke-width:4" d="M268 156H328"/>
-  <path class="o" d="M268 168H306"/>
+  <rect class="k" x="34" y="18" width="150" height="132" rx="12"/>
+  <rect class="o" x="30" y="14" width="150" height="132" rx="12" fill="#fff"/>
+  <circle class="k" cx="42" cy="26" r="3"/><circle class="k" cx="52" cy="26" r="3"/><circle class="k" cx="62" cy="26" r="3"/>
+  <path class="o" style="stroke-width:2.5" d="M30 38H180"/>
+  <rect class="o" style="stroke-width:2.5" x="44" y="50" width="122" height="22" rx="6" fill="#fff"/>
+  <path class="o" d="M54 61H104"/>
+  <circle class="o" style="stroke-width:2" cx="154" cy="61" r="6.5" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2" d="M151 61l2.5 2.5l5-5"/>
+  <rect class="o" style="stroke-width:2.5" x="44" y="82" width="122" height="22" rx="6" fill="#f0ff70"/>
+  <path class="o" d="M54 93H86"/>
+  <path class="o" style="stroke-width:2.5" d="M92 87V99"/>
+  <rect class="o" style="stroke-width:2.5" x="44" y="114" width="122" height="22" rx="6" fill="#fff"/>
+  <path class="o" d="M54 125H112"/>
+  <circle class="o" style="stroke-width:2" cx="154" cy="125" r="6.5" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2" d="M151 125l2.5 2.5l5-5"/>
+  <circle class="k" cx="236" cy="68" r="26"/>
+  <circle class="o" cx="232" cy="64" r="26" fill="#d1e7ff"/>
+  <path class="o" style="stroke-width:3.5" d="M242 76C247 64 240 54 228 54H220M226 47L219 54L226 61"/>
+  <rect class="k" x="200" y="114" width="84" height="28" rx="14"/>
+  <rect class="o" x="196" y="110" width="84" height="28" rx="14" fill="#fff"/>
+  <circle class="o" style="stroke-width:2" cx="212" cy="124" r="7" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2" d="M208.5 124l2.5 2.5l5-5"/>
+  <path class="o" d="M226 124H266"/>
 </svg>
