@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <title>An AI-drafted reply waiting for a person to approve it before sending</title>
+  <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
+  <!-- chat window -->
+  <rect class="k" x="29" y="21" width="212" height="188" rx="14"/>
+  <rect class="o" x="24" y="16" width="212" height="188" rx="14" fill="#fff"/>
+  <circle class="k" cx="39" cy="30" r="3.5"/><circle class="k" cx="51" cy="30" r="3.5"/><circle class="k" cx="63" cy="30" r="3.5"/>
+  <path class="o" d="M24 44H236"/>
+  <!-- customer message -->
+  <rect class="o" style="stroke-width:2.5" x="38" y="58" width="124" height="38" rx="14" fill="#d1e7ff"/>
+  <path class="o" style="stroke-width:3.5" d="M52 72H140"/>
+  <path class="o" d="M52 83H110"/>
+  <!-- AI draft (dashed = not sent yet) -->
+  <rect class="o" style="stroke-width:2.5;stroke-dasharray:7 6" x="84" y="110" width="138" height="50" rx="14" fill="#fff"/>
+  <path class="o" style="stroke-width:3.5" d="M102 128H202"/>
+  <path class="o" d="M102 141H170"/>
+  <path class="o" style="stroke-width:2.5" d="M86 94L90 104L100 108L90 112L86 122L82 112L72 108L82 104Z" fill="#f0ff70"/>
+  <!-- actions -->
+  <rect class="o" style="stroke-width:2.5" x="84" y="172" width="58" height="22" rx="11" fill="#fff"/>
+  <path class="o" style="stroke-width:2.5" d="M104 183H122"/>
+  <rect class="k" x="150" y="172" width="72" height="22" rx="11"/>
+  <path stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M176 183H198M192 177l6 6l-6 6"/>
+  <!-- reviewer -->
+  <path class="o" style="stroke-width:2.5;stroke-dasharray:5 6" d="M266 92C250 102 244 116 228 128"/>
+  <circle class="k" cx="301" cy="73" r="30"/>
+  <circle class="o" cx="296" cy="68" r="30" fill="#ffe58f"/>
+  <circle class="o" style="stroke-width:2.5" cx="296" cy="60" r="10" fill="#fff"/>
+  <path class="o" style="stroke-width:2.5" d="M277 89Q296 70 315 89" fill="#fff"/>
+  <rect class="k" x="267" y="113" width="68" height="28" rx="14"/>
+  <rect class="o" x="262" y="108" width="68" height="28" rx="14" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2.6" d="M276 122l4 4l8-8"/>
+  <path class="o" style="stroke-width:3.5" d="M296 122H316"/>
+  <!-- send toggle held by a person -->
+  <rect class="k" x="267" y="165" width="72" height="34" rx="17"/>
+  <rect class="o" x="262" y="160" width="72" height="34" rx="17" fill="#f0ff70"/>
+  <circle class="k" cx="316" cy="177" r="11"/>
+</svg>

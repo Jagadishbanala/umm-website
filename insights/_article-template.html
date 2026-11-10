@@ -1,0 +1,502 @@
+<!doctype html>
+<!--
+  ==========================================================================
+  UMM JOURNAL — ARTICLE TEMPLATE
+  ==========================================================================
+  HOW TO PUBLISH A NEW ARTICLE
+
+  1. Duplicate this file inside /insights and name it after the article:
+       insights/your-article-slug.html   (lowercase, words joined by hyphens)
+
+  2. Search for "{{" and replace every placeholder:
+       {{ARTICLE_TITLE}}      Full title (also used in <title>, og:title, JSON-LD)
+       {{TITLE_START}}        Title text before the lime highlight
+       {{TITLE_HIGHLIGHT}}    Last few words of the title (shown on the lime chip)
+       {{DEK}}                One- or two-sentence summary under the title
+       {{META_DESCRIPTION}}   ~155 characters for search results (often = DEK)
+       {{CATEGORY}}           AI & Automation | Engineering | Cloud & Data |
+                              Digital Commerce | Experience Design | Growth & Strategy
+       {{FORMAT}}             Perspective | Decision guide | Practical guide
+       {{AUTHOR}} / {{AUTHOR_BIO}}
+       {{DATE_ISO}} (2026-11-10)   {{DATE_READABLE}} (10 Nov 2026)
+       {{CANONICAL_URL}}      Final public URL of the article
+       {{ILLUSTRATION}}       File name (without .svg) of an illustration in assets/img/illustrations/
+                              e.g. ai-draft-or-send, buy-or-build, sales-reports, delivery-cost,
+                              fix-a-mistake, ad-to-right-page, offline-sales
+       {{BANNER_CAPTION}}     Short label in the banner corner
+
+  3. Set the category colour on <article data-umm-tone="…">:
+       AI & Automation → lilac      Engineering → sky         Cloud & Data → sun
+       Digital Commerce → citrus    Experience Design → blossom   Growth & Strategy → coral
+
+     Need a new illustration? Draw it in the same style as the ones in
+     assets/img/illustrations (360 × 220, 3px ink outlines #100e14, a solid ink
+     shadow offset 5px, white fills, brand pastel accents) so it shows the
+     article's idea, then save it there.
+
+  4. Write the article inside <div class="prose" data-article-body>.
+     The COMPONENT LIBRARY below shows every block you can use — keep what you
+     need, delete the rest.
+       • Every <h2> automatically becomes a numbered "In this article" link.
+         Add data-toc-label="Shorter label" to shorten it, data-toc="false" to skip it.
+       • Reading time is calculated automatically.
+       • Share buttons automatically use this page's URL.
+
+  5. Update the FAQ in the JSON-LD (in <head>) to match your FAQ, or delete the
+     FAQPage block if the article has no FAQ.
+
+  6. Pick 3 cards for "Latest articles" (copy them from index.html, then change
+     "insights/slug.html" → "slug.html" and "assets/" → "../assets/").
+
+  7. Add the article to the blog main page: copy any <li> in the post grid of
+     index.html and update data-category, data-industries, data-umm-tone,
+     title, excerpt and link.
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ARTICLE_TITLE}} — The UMM Journal</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ARTICLE_TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="../assets/img/illustrations/{{ILLUSTRATION}}.svg">
+  <meta property="article:published_time" content="{{DATE_ISO}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="../assets/fonts/Mosvita-Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../assets/css/umm-blog.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "{{ARTICLE_TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "articleSection": "{{CATEGORY}}",
+        "datePublished": "{{DATE_ISO}}",
+        "mainEntityOfPage": "{{CANONICAL_URL}}",
+        "author": { "@type": "Organization", "name": "{{AUTHOR}}" },
+        "publisher": { "@type": "Organization", "name": "Unified Modern Minds", "url": "https://umm.digital/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "{{FAQ_QUESTION_1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_ANSWER_1}}" } },
+          { "@type": "Question", "name": "{{FAQ_QUESTION_2}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_ANSWER_2}}" } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="read-progress" data-read-progress aria-hidden="true"></div>
+
+  <!-- ===================== HEADER (same as umm.digital) ===================== -->
+  <header class="site-header">
+    <a class="site-logo" href="https://umm.digital/" aria-label="Unified Modern Minds — home">
+      <img src="../assets/img/umm-logo-black.svg" alt="UMM" width="150" height="36">
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__pill">
+        <li><button class="site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-ai"><img src="../assets/img/ai-icon.svg" alt="">UMM AI</button></li>
+        <li><button class="site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-expertise">Expertise</button></li>
+        <li><button class="site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-industries">Industries</button></li>
+        <li><button class="site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-resources" aria-current="page">Insights</button></li>
+        <li><button class="site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-about">About</button></li>
+      </ul>
+    </nav>
+
+    <div class="mega" id="mega-ai" data-label="UMM AI">
+      <div class="mega__brand">
+        <img class="mega__mark" src="../assets/img/ai_-2.svg" alt="/ai>">
+        <img class="mega__art" src="../assets/img/UMM-AI.webp" alt="" loading="lazy">
+      </div>
+      <ul class="mega__links mega__links--rows3">
+        <li><a href="https://umm.digital/ai-consulting/"><img src="../assets/img/icons/ai1.svg" alt="">AI Consulting</a></li>
+        <li><a href="https://umm.digital/ai-platforms/"><img src="../assets/img/icons/ai3.svg" alt="">AI Platforms</a></li>
+        <li><a href="https://umm.digital/winning-with-ai/"><img src="../assets/img/icons/ai4.svg" alt="">Winning with AI</a></li>
+        <li class="mega__feature"><a href="https://umm.digital/rage/" aria-label="RAGe AI — your AI guide to everything UMM"><img class="mega__art--card" src="../assets/img/RAGe-AI.webp" alt="" loading="lazy"></a></li>
+      </ul>
+    </div>
+
+    <div class="mega" id="mega-expertise" data-label="Expertise">
+      <div class="mega__brand">
+        <img class="mega__mark" src="../assets/img/do_-1.svg" alt="<we/do>">
+        <img class="mega__art" src="../assets/img/Expertise.webp" alt="" loading="lazy">
+      </div>
+      <ul class="mega__links mega__links--rows4">
+        <li><a href="https://umm.digital/service/ai-automation/"><img src="../assets/img/icons/e1.svg" alt="">AI &amp; Automation</a></li>
+        <li><a href="https://umm.digital/service/ux-digital-commerce/"><img src="../assets/img/icons/e2.svg" alt="">UX &amp; Digital Commerce</a></li>
+        <li><a href="https://umm.digital/service/digital-engineering/"><img src="../assets/img/icons/e3.svg" alt="">Digital Engineering</a></li>
+        <li><a href="https://umm.digital/service/cloud-data/"><img src="../assets/img/icons/e4.svg" alt="">Cloud &amp; Data</a></li>
+        <li><a href="https://umm.digital/service/customer-experience-ui-design/"><img src="../assets/img/icons/e5.svg" alt="">Customer Experience &amp; UI Design</a></li>
+        <li><a href="https://umm.digital/service/integrated-growth-strategy/"><img src="../assets/img/icons/e6.svg" alt="">Integrated Growth &amp; Strategy</a></li>
+      </ul>
+    </div>
+
+    <div class="mega" id="mega-industries" data-label="Industries">
+      <div class="mega__brand">
+        <img class="mega__mark" src="../assets/img/sector-2.svg" alt="/sector.">
+        <img class="mega__art" src="../assets/img/3.png" alt="" loading="lazy">
+      </div>
+      <ul class="mega__links mega__links--rows5">
+        <li><a href="https://umm.digital/fintech-banking-insurance/"><img src="../assets/img/icons/s1.svg" alt="">Fintech, Banking &amp; Insurance</a></li>
+        <li><a href="https://umm.digital/manufacturing/"><img src="../assets/img/icons/s2.svg" alt="">Manufacturing</a></li>
+        <li><a href="https://umm.digital/telecom/"><img src="../assets/img/icons/s3.svg" alt="">Telecom &amp; Media</a></li>
+        <li><a href="https://umm.digital/retail-and-ecommerce/"><img src="../assets/img/icons/s4.svg" alt="">Retail &amp; Ecommerce</a></li>
+        <li><a href="https://umm.digital/education/"><img src="../assets/img/icons/s5.svg" alt="">Education</a></li>
+        <li><a href="https://umm.digital/deep-tech-and-ai/"><img src="../assets/img/icons/s6.svg" alt="">Deep-tech &amp; AI</a></li>
+        <li><a href="https://umm.digital/software-and-saas/"><img src="../assets/img/icons/s7.svg" alt="">Software &amp; SaaS</a></li>
+        <li><a href="https://umm.digital/capital-markets-pe-vc/"><img src="../assets/img/icons/s8.svg" alt="">Capital Markets, PE/VC</a></li>
+        <li><a href="https://umm.digital/bio-tech-and-life-science/"><img src="../assets/img/icons/s9.svg" alt="">Bio-Tech &amp; Life Science</a></li>
+        <li><a href="https://umm.digital/government/"><img src="../assets/img/icons/s10.svg" alt="">Government</a></li>
+      </ul>
+    </div>
+
+    <div class="mega" id="mega-resources" data-label="Insights">
+      <div class="mega__brand">
+        <img class="mega__mark" src="../assets/img/kw1.svg" alt="Kn{o}w.">
+        <img class="mega__art" src="../assets/img/Resources.webp" alt="" loading="lazy">
+      </div>
+      <ul class="mega__links mega__links--rows4">
+        <li><a href="https://umm.digital/casestudies/"><img src="../assets/img/icons/k1.svg" alt="">Case Studies</a></li>
+        <li><a href="#"><img src="../assets/img/icons/k2.svg" alt="">Client Corner</a></li>
+        <li><a href="#"><img src="../assets/img/icons/k3.svg" alt="">Partners</a></li>
+        <li><a href="../index.html" aria-current="page"><img src="../assets/img/icons/k4.svg" alt="">Blog</a></li>
+        <li><a href="#"><img src="../assets/img/icons/k5.svg" alt="">White Papers</a></li>
+        <li><a href="../index.html"><img src="../assets/img/icons/k6.svg" alt="">Insights</a></li>
+        <li><a href="#"><img src="../assets/img/icons/k7.svg" alt="">Webinars</a></li>
+      </ul>
+    </div>
+
+    <div class="mega" id="mega-about" data-label="About">
+      <div class="mega__brand">
+        <img class="mega__mark" src="../assets/img/minds-2.svg" alt="the/minds.">
+        <img class="mega__art" src="../assets/img/About.webp" alt="" loading="lazy">
+      </div>
+      <ul class="mega__links mega__links--rows3">
+        <li><a href="https://umm.digital/about/"><img src="../assets/img/icons/m1.svg" alt="">Journey</a></li>
+        <li><a href="https://umm.digital/about/culture/"><img src="../assets/img/icons/m2.svg" alt="">Life@umm</a></li>
+        <li><a href="#"><img src="../assets/img/icons/m3.svg" alt="">Career</a></li>
+      </ul>
+    </div>
+
+    <div class="site-header__actions">
+      <a class="umm-cta" href="https://umm.digital/contact/">
+        <span class="umm-cta__label">Get in Touch</span>
+        <span class="umm-cta__dot"><span class="fly" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </header>
+  <!-- Mobile menu is generated from the mega menus by umm-blog.js -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu"></div>
+
+  <main id="main">
+    <!-- STEP 3: set the category tone here -->
+    <article data-umm-tone="lilac">
+
+      <!-- ============ ARTICLE HERO ============ -->
+      <header class="a-hero">
+        <div class="wrap">
+          <ol class="crumbs mono" aria-label="Breadcrumb">
+            <li><a href="../index.html">Insights</a></li>
+            <li><a href="../index.html#insights">{{CATEGORY}}</a></li>
+            <li aria-current="page">{{FORMAT}}</li>
+          </ol>
+          <div class="a-hero__grid">
+            <div>
+              <p class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>The UMM Journal</p>
+              <h1 class="a-hero__title display-l">{{TITLE_START}} <span class="hl" data-umm-tone="citrus">{{TITLE_HIGHLIGHT}}</span></h1>
+            </div>
+            <div>
+              <p class="a-hero__dek">{{DEK}}</p>
+              <div class="a-meta">
+                <span class="pill pill--tone">{{CATEGORY}}</span>
+                <span class="pill">{{FORMAT}}</span>
+                <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-reading-time="auto">3 min read</span></span>
+                <span class="pill"><time datetime="{{DATE_ISO}}">{{DATE_READABLE}}</time></span>
+              </div>
+              <div class="byline">
+                <span class="avatar"><img src="../assets/img/umm-logo-black.svg" alt=""></span>
+                <div><span class="mono">Written by</span><span class="byline__name">{{AUTHOR}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ BANNER (choose an illustration in STEP 2) ============ -->
+      <div class="wrap">
+        <figure class="a-banner reveal" aria-hidden="true" style="margin:0">
+          <span class="mono a-banner__cap--tr">Intelligence, with intention.</span>
+          <img class="a-banner__illo" src="../assets/img/illustrations/{{ILLUSTRATION}}.svg" alt="" width="360" height="220" onerror="this.onerror=null;this.src='../assets/img/illustrations/ai-draft-or-send.svg'">
+          <span class="mono a-banner__cap--bl">The UMM Journal</span>
+          <span class="mono a-banner__cap--br">{{BANNER_CAPTION}}</span>
+        </figure>
+      </div>
+
+      <!-- ============ BODY ============ -->
+      <div class="wrap a-layout">
+        <aside class="a-rail" aria-label="Article tools">
+          <nav class="toc" aria-label="In this article">
+            <details open>
+              <summary>In this article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <ol data-toc-list></ol><!-- filled automatically from the <h2> headings -->
+            </details>
+          </nav>
+          <div class="share">
+            <p class="mono">Share this article</p>
+            <ul class="share__list">
+              <li><a href="#" data-share="linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.15 1.46-2.15 2.96V21H9z"/></svg></a></li>
+              <li><a href="#" data-share="x" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.2h1.7L7.4 4.73H5.58z"/></svg></a></li>
+              <li><a href="#" data-share="facebook" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.76 0-4.5 1.79-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a></li>
+              <li><a href="#" data-share="whatsapp" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path fill="currentColor" d="M9 8.5c0 3 2.5 6.5 6.3 6.8l1.2-1.6-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2z"/></svg></a></li>
+              <li><button type="button" data-share-copy aria-label="Copy link"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1.2 1.2M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1.2-1.2"/></svg></button></li>
+            </ul>
+            <p class="share__toast" data-share-toast aria-live="polite"></p>
+          </div>
+        </aside>
+
+        <div class="prose" data-article-body>
+          <!-- =======================================================
+               COMPONENT LIBRARY — keep what you need, delete the rest
+               ======================================================= -->
+
+          <!-- [Lead paragraph] — the opening idea, slightly larger -->
+          <p class="lead">{{INTRO — one or two sentences that frame the question the article answers.}}</p>
+
+          <!-- [Quick take] — the one-line answer, lime box -->
+          <aside class="quick-take">
+            <p class="quick-take__label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>The quick take</p>
+            <p>{{QUICK_TAKE — the article's answer in one or two short sentences.}}</p>
+          </aside>
+
+          <!-- [Section] — each <h2> becomes an "In this article" link -->
+          <h2>{{SECTION_HEADING_1}}</h2>
+          <p>{{Paragraph. Keep paragraphs to 2–4 sentences. Use <strong>bold</strong> for the key phrase and <a href="#">inline links</a> for references.}}</p>
+          <p>{{Paragraph.}}</p>
+
+          <!-- [Sub-heading] -->
+          <h3>{{SUB_HEADING}}</h3>
+          <p>{{Paragraph.}}</p>
+
+          <!-- [Bulleted list] -->
+          <ul>
+            <li>{{List item}}</li>
+            <li>{{List item}}</li>
+            <li>{{List item}}</li>
+          </ul>
+
+          <!-- [Numbered steps] -->
+          <ol>
+            <li>{{Step one}}</li>
+            <li>{{Step two}}</li>
+            <li>{{Step three}}</li>
+          </ol>
+
+          <h2>{{SECTION_HEADING_2}}</h2>
+          <p>{{Paragraph.}}</p>
+
+          <!-- [Pull quote] -->
+          <blockquote class="pull-quote">
+            <p>{{A short, memorable line from the article.}}</p>
+            <cite>{{Name, role — optional}}</cite>
+          </blockquote>
+
+          <!-- [Checklist] — "what to check / what's included" -->
+          <ul class="checklist">
+            <li>{{Checklist item}}</li>
+            <li>{{Checklist item}}</li>
+            <li>{{Checklist item}}</li>
+          </ul>
+
+          <!-- [Callout] — change data-umm-tone: sky | sun | blossom | coral | lilac | citrus -->
+          <aside class="callout" data-umm-tone="sky">
+            <p class="callout__label"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>{{Callout label, e.g. Worth knowing}}</p>
+            <p>{{A tip, caveat or definition that deserves to stand apart.}}</p>
+          </aside>
+
+          <h2>{{SECTION_HEADING_3}}</h2>
+          <p>{{Paragraph.}}</p>
+
+          <!-- [Stats] — 2 to 4 figures; set a tone per stat if you like -->
+          <div class="stat-row">
+            <div class="stat" data-umm-tone="sky"><b>{{40%}}</b><span>{{What the number means}}</span></div>
+            <div class="stat" data-umm-tone="sun"><b>{{3×}}</b><span>{{What the number means}}</span></div>
+            <div class="stat" data-umm-tone="blossom"><b>{{12}}</b><span>{{What the number means}}</span></div>
+          </div>
+
+          <!-- [Image with caption] -->
+          <figure>
+            <img src="../assets/img/Expertise.webp" alt="{{Describe the image}}" loading="lazy" style="background:var(--umm-veil)">
+            <figcaption>{{Caption or source}}</figcaption>
+          </figure>
+
+          <!-- [Table] -->
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>{{Column}}</th><th>{{Column}}</th><th>{{Column}}</th></tr></thead>
+              <tbody>
+                <tr><td>{{Cell}}</td><td>{{Cell}}</td><td>{{Cell}}</td></tr>
+                <tr><td>{{Cell}}</td><td>{{Cell}}</td><td>{{Cell}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- [Inline call to action] -->
+          <div class="inline-cta">
+            <p>{{Want to talk this through for your team?}}</p>
+            <a class="umm-cta umm-cta--citrus" href="https://umm.digital/contact/">
+              <span class="umm-cta__label">Get in Touch</span>
+              <span class="umm-cta__dot"><span class="fly" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+            </a>
+          </div>
+
+          <!-- [FAQ] — keep the questions in sync with the JSON-LD in <head> -->
+          <section class="faq" aria-labelledby="questions">
+            <p class="eyebrow eyebrow--dot">FAQ</p>
+            <h2 id="questions" data-toc-label="Frequently asked questions">Frequently asked questions.</h2>
+            <div class="faq__list">
+              <details>
+                <summary>{{FAQ_QUESTION_1}} <span class="plus" aria-hidden="true"></span></summary>
+                <p>{{FAQ_ANSWER_1}}</p>
+              </details>
+              <details>
+                <summary>{{FAQ_QUESTION_2}} <span class="plus" aria-hidden="true"></span></summary>
+                <p>{{FAQ_ANSWER_2}}</p>
+              </details>
+            </div>
+          </section>
+
+          <!-- [Author] -->
+          <aside class="author-card">
+            <span class="avatar"><img src="../assets/img/umm-logo-black.svg" alt=""></span>
+            <div>
+              <span class="mono">Written by</span>
+              <h3>{{AUTHOR}}</h3>
+              <p>{{AUTHOR_BIO}}</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ RELATED (STEP 6: replace with 3 real cards) ============ -->
+    <section class="related" aria-labelledby="related-title">
+      <div class="wrap">
+        <div class="related__head">
+          <div>
+            <p class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>More from the UMM Journal</p>
+            <h2 class="display-m" id="related-title">Latest <span class="hl" data-umm-tone="citrus">articles.</span></h2>
+          </div>
+          <a class="text-link" href="../index.html#insights"><span>All articles</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <ul class="post-grid">
+          <li>
+            <article class="post-card reveal" data-umm-tone="sky">
+              <div class="post-card__top"><span class="mono">Engineering</span><span class="mono">Decision guide</span></div>
+              <div class="post-card__visual" aria-hidden="true"><img src="../assets/img/illustrations/buy-or-build.svg" alt="" loading="lazy" width="360" height="220"></div>
+              <h3 class="post-card__title"><a href="buy-software-or-build-your-own.html">Should you buy software or build your own?</a></h3>
+              <p class="post-card__excerpt">Start with the job your software needs to do. Then decide who should build it.</p>
+              <div class="post-card__foot">Read the article</div>
+              <span class="notch" aria-hidden="true"><span class="notch__btn"><span class="fly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></span>
+            </article>
+          </li>
+          <li>
+            <article class="post-card reveal" data-umm-tone="sun">
+              <div class="post-card__top"><span class="mono">Cloud &amp; Data</span><span class="mono">Perspective</span></div>
+              <div class="post-card__visual" aria-hidden="true"><img src="../assets/img/illustrations/sales-reports.svg" alt="" loading="lazy" width="360" height="220"></div>
+              <h3 class="post-card__title"><a href="why-sales-reports-disagree.html">Why do your sales reports disagree?</a></h3>
+              <p class="post-card__excerpt">The same business. Three dashboards. Three different answers. Where do you start?</p>
+              <div class="post-card__foot">Read the article</div>
+              <span class="notch" aria-hidden="true"><span class="notch__btn"><span class="fly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></span>
+            </article>
+          </li>
+          <li>
+            <article class="post-card reveal" data-umm-tone="citrus">
+              <div class="post-card__top"><span class="mono">Digital Commerce</span><span class="mono">Practical guide</span></div>
+              <div class="post-card__visual" aria-hidden="true"><img src="../assets/img/illustrations/delivery-cost.svg" alt="" loading="lazy" width="360" height="220"></div>
+              <h3 class="post-card__title"><a href="when-to-show-delivery-cost.html">When should shoppers see the delivery cost?</a></h3>
+              <p class="post-card__excerpt">A small detail in the buying journey. A big question of trust.</p>
+              <div class="post-card__foot">Read the article</div>
+              <span class="notch" aria-hidden="true"><span class="notch__btn"><span class="fly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></span>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ LET'S TALK ============ -->
+    <section class="talk" aria-labelledby="talk-title" style="padding-top:var(--umm-section-y-tight)">
+      <div class="wrap">
+        <p class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>Thinking about what’s next?</p>
+        <div class="talk__row">
+          <h2 class="talk__title display-l" id="talk-title"><span class="line">Good questions deserve</span> <span class="line">a <span class="hl" data-umm-tone="citrus">great conversation.</span></span></h2>
+          <a class="round-cta" href="https://umm.digital/contact/" aria-label="Start a conversation with UMM">
+            <span class="fly" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER (same as umm.digital) ===================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="https://umm.digital/" aria-label="Unified Modern Minds — home"><img class="footer-wordmark" src="../assets/img/ummlogotxt.svg" alt="Unified Modern Minds" loading="lazy"></a>
+        <div class="footer-partner">
+          <p>Ready to partner? Let’s turn your challenge into impact—starting today.</p>
+          <a class="umm-cta" href="https://umm.digital/contact/">
+            <span class="umm-cta__label">Get in Touch</span>
+            <span class="umm-cta__dot"><span class="fly" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <div><h2 class="footer-h">Reach us via email</h2><a class="footer-mail" href="mailto:ping@umm.digital">ping@umm.digital</a></div>
+        <div><h2 class="footer-h">Join our team</h2><a class="footer-mail" href="mailto:hr@umm.digital">hr@umm.digital</a></div>
+        <div class="footer-reach">
+          <h2 class="footer-h">Our Global Reach</h2>
+          <p>From Dallas to Shenzhen, we partner with businesses across the world.</p>
+          <ul class="city-pills">
+            <li>Dallas, USA <img src="../assets/img/flags/us.svg" alt="" loading="lazy"></li>
+            <li>London, UK <img src="../assets/img/flags/uk.svg" alt="" loading="lazy"></li>
+            <li>Dubai, UAE <img src="../assets/img/flags/ae.svg" alt="" loading="lazy"></li>
+            <li>Nairobi, Kenya <img src="../assets/img/flags/ke.svg" alt="" loading="lazy"></li>
+            <li>Shenzhen, China <img src="../assets/img/flags/cn.svg" alt="" loading="lazy"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div><h2 class="footer-h">Quick Links</h2><ul><li><a href="https://umm.digital/">Home</a></li><li><a href="https://umm.digital/about/">About Us</a></li><li><a href="https://umm.digital/contact/">Contact Us</a></li></ul></div>
+        <div><h2 class="footer-h">Resources</h2><ul><li><a href="../index.html">Blog</a></li><li><a href="#">Whitepapers</a></li><li><a href="#">Webinars</a></li><li><a href="https://umm.digital/casestudies/">Client Success Stories</a></li><li><a href="../index.html">Insights</a></li></ul></div>
+        <div><h2 class="footer-h">Legal</h2><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>©2026 Unified Modern Minds</p>
+        <nav aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms of Service</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top" data-to-top>
+    <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" data-to-top-ring/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/umm-blog.js" defer></script>
+</body>
+</html>

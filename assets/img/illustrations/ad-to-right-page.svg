@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <title>An ad that leads to a landing page showing the same offer</title>
+  <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
+  <!-- ad card -->
+  <rect class="k" x="29" y="39" width="112" height="162" rx="14"/>
+  <rect class="o" x="24" y="34" width="112" height="162" rx="14" fill="#fff"/>
+  <circle class="o" style="stroke-width:2.2" cx="40" cy="50" r="7" fill="#ffe58f"/>
+  <path class="o" d="M54 50H96"/>
+  <rect class="o" style="stroke-width:2.5" x="36" y="64" width="88" height="64" rx="8" fill="#f0ff70"/>
+  <path class="o" style="stroke-width:2.5" d="M80 78L85 91L98 96L85 101L80 114L75 101L62 96L75 91Z" fill="#fff"/>
+  <path class="o" style="stroke-width:4" d="M36 142H110"/>
+  <path class="o" d="M36 154H90"/>
+  <rect class="k" x="36" y="166" width="62" height="20" rx="10"/>
+  <path stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M72 176H84M80 172l4 4l-4 4"/>
+  <!-- path from ad to page -->
+  <path class="o" style="stroke-width:2.5;stroke-dasharray:5 6" d="M100 176C150 176 150 104 194 100"/>
+  <path class="o" style="stroke-width:2.5" d="M186 94L194 100L187 107"/>
+  <path class="o" style="stroke-width:2.5" d="M146 124L146 150L153 144L158 156L163 154L158 142L167 142Z" fill="#fff"/>
+  <!-- landing page -->
+  <rect class="k" x="201" y="27" width="142" height="178" rx="12"/>
+  <rect class="o" x="196" y="22" width="142" height="178" rx="12" fill="#fff"/>
+  <circle class="k" cx="210" cy="36" r="3.5"/><circle class="k" cx="222" cy="36" r="3.5"/><circle class="k" cx="234" cy="36" r="3.5"/>
+  <rect class="o" style="stroke-width:2" x="246" y="30" width="80" height="12" rx="6" fill="#fff"/>
+  <path class="o" d="M196 50H338"/>
+  <rect class="o" style="stroke-width:2.5" x="208" y="60" width="118" height="70" rx="8" fill="#f0ff70"/>
+  <path class="o" style="stroke-width:2.5" d="M267 77L272 90L285 95L272 100L267 113L262 100L249 95L262 90Z" fill="#fff"/>
+  <path class="o" style="stroke-width:4" d="M208 146H300"/>
+  <path class="o" d="M208 158H270"/>
+  <rect class="k" x="208" y="170" width="70" height="20" rx="10"/>
+  <!-- match badge -->
+  <circle class="o" cx="334" cy="26" r="14" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2.6" d="M327 26l4.5 4.5l9-9"/>
+</svg>

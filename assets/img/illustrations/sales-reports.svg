@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <title>Three dashboards showing three different answers</title>
+  <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
+  <!-- dashboard A: bars -->
+  <rect class="k" x="25" y="67" width="100" height="112" rx="10"/>
+  <rect class="o" x="20" y="62" width="100" height="112" rx="10" fill="#fff"/>
+  <path class="o" d="M20 86H120"/>
+  <rect class="o" style="stroke-width:2" x="30" y="69" width="44" height="10" rx="5" fill="#d1e7ff"/>
+  <path class="o" d="M30 162H110"/>
+  <rect class="k" x="35" y="132" width="12" height="30" rx="2"/>
+  <rect class="o" style="stroke-width:2.5" x="53" y="114" width="12" height="48" rx="2" fill="#ffc4f2"/>
+  <rect class="k" x="71" y="124" width="12" height="38" rx="2"/>
+  <rect class="o" style="stroke-width:2.5" x="89" y="102" width="12" height="60" rx="2" fill="#d1e7ff"/>
+  <!-- dashboard B: line -->
+  <rect class="k" x="135" y="45" width="100" height="112" rx="10"/>
+  <rect class="o" x="130" y="40" width="100" height="112" rx="10" fill="#fff"/>
+  <path class="o" d="M130 64H230"/>
+  <rect class="o" style="stroke-width:2" x="140" y="47" width="58" height="10" rx="5" fill="#f0ff70"/>
+  <path class="o" d="M142 140H218"/>
+  <path class="o" d="M144 124L162 106L180 116L198 88L216 98"/>
+  <circle class="o" style="stroke-width:2.5" cx="162" cy="106" r="4" fill="#fff"/>
+  <circle class="o" style="stroke-width:2.5" cx="198" cy="88" r="4" fill="#f0ff70"/>
+  <!-- dashboard C: donut -->
+  <rect class="k" x="245" y="75" width="100" height="112" rx="10"/>
+  <rect class="o" x="240" y="70" width="100" height="112" rx="10" fill="#fff"/>
+  <path class="o" d="M240 94H340"/>
+  <rect class="o" style="stroke-width:2" x="250" y="77" width="30" height="10" rx="5" fill="#dccfff"/>
+  <circle class="o" cx="290" cy="138" r="27" fill="#fff"/>
+  <path class="o" style="stroke-width:2.5" d="M290 138V111A27 27 0 0 1 315.7 146.3Z" fill="#ffc4f2"/>
+  <path class="o" style="stroke-width:2.5" d="M290 138L315.7 146.3A27 27 0 0 1 268 153.8Z" fill="#d1e7ff"/>
+  <circle class="o" style="stroke-width:2.5" cx="290" cy="138" r="10" fill="#fff"/>
+  <!-- question bubble -->
+  <circle class="k" cx="323" cy="47" r="24"/>
+  <path class="o" d="M304 58L296 74L314 64" fill="#ffc4f2"/>
+  <circle class="o" cx="318" cy="42" r="24" fill="#ffc4f2"/>
+  <path class="o" style="stroke-width:3.6" d="M310 36q0-9 8-9q8 0 8 8q0 6-7 8v4"/>
+  <circle class="k" cx="319" cy="55" r="2.8"/>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <title>A phone with no signal that still lists orders and saves them on the device</title>
+  <style>.o{stroke:#100e14;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.k{fill:#100e14}</style>
+  <!-- cloud (disconnected) -->
+  <path class="k" transform="translate(5 5)" d="M40 104H92A16 16 0 0 0 90 72A22 22 0 0 0 48 70A17 17 0 0 0 40 104Z"/>
+  <path class="o" d="M40 104H92A16 16 0 0 0 90 72A22 22 0 0 0 48 70A17 17 0 0 0 40 104Z" fill="#fff"/>
+  <circle class="o" style="stroke-width:2.5" cx="96" cy="66" r="10" fill="#ffc3c4"/>
+  <path class="o" style="stroke-width:2.5" d="M92 62l8 8M100 62l-8 8"/>
+  <path class="o" style="stroke-width:2.5;stroke-dasharray:4 6" d="M70 112C74 130 96 138 118 136"/>
+  <!-- phone -->
+  <rect class="k" x="129" y="15" width="110" height="196" rx="20"/>
+  <rect class="o" x="124" y="10" width="110" height="196" rx="20" fill="#fff"/>
+  <path class="o" d="M166 24H192"/>
+  <path class="o" style="stroke-width:2.6" d="M162 54Q179 40 196 54M168 61Q179 53 190 61"/>
+  <circle class="k" cx="179" cy="67" r="3"/>
+  <path class="o" style="stroke-width:2.6" d="M164 42L194 72"/>
+  <rect class="o" style="stroke-width:2.5" x="138" y="84" width="82" height="24" rx="6" fill="#ffe58f"/>
+  <circle class="o" style="stroke-width:2" cx="150" cy="96" r="6" fill="#c2ffcd"/>
+  <path class="o" d="M162 96H204"/>
+  <rect class="o" style="stroke-width:2.5" x="138" y="114" width="82" height="24" rx="6" fill="#fff"/>
+  <circle class="o" style="stroke-width:2" cx="150" cy="126" r="6" fill="#c2ffcd"/>
+  <path class="o" d="M162 126H196"/>
+  <rect class="o" style="stroke-width:2.5" x="138" y="144" width="82" height="24" rx="6" fill="#fff"/>
+  <circle class="o" style="stroke-width:2" cx="150" cy="156" r="6" fill="#fff"/>
+  <path class="o" d="M162 156H200"/>
+  <rect class="k" x="138" y="178" width="82" height="18" rx="9"/>
+  <!-- location pin -->
+  <path class="k" transform="translate(5 5)" d="M302 92C302 92 282 72 282 58A20 20 0 0 1 322 58C322 72 302 92 302 92Z"/>
+  <path class="o" d="M302 92C302 92 282 72 282 58A20 20 0 0 1 322 58C322 72 302 92 302 92Z" fill="#ffc4f2"/>
+  <circle class="o" style="stroke-width:2.5" cx="302" cy="58" r="7" fill="#fff"/>
+  <!-- saved on device -->
+  <rect class="k" x="217" y="153" width="128" height="38" rx="19"/>
+  <rect class="o" x="212" y="148" width="128" height="38" rx="19" fill="#fff"/>
+  <circle class="o" style="stroke-width:2.2" cx="233" cy="167" r="10" fill="#c2ffcd"/>
+  <path class="o" style="stroke-width:2.5" d="M228 167l3.5 3.5l7-7"/>
+  <path class="o" style="stroke-width:4" d="M252 161H320"/>
+  <path class="o" d="M252 173H296"/>
+</svg>
